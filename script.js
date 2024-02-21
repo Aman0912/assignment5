@@ -21,18 +21,14 @@ for (const seat of allSeat) {
             this.style.backgroundColor = '#1dd100'
             count = count + 1;
             setInnerText('seat-number', count);
-            // total cost
             const totalCost = document.getElementById('total-cost').innerText;
             const convertedCost = parseInt(totalCost);
             document.getElementById('total-cost').innerText = convertedCost + parseInt(price);
 
-            // grand total
             const grandTotal = document.getElementById('grand-total').innerText;
             const convertGrandTotal = parseInt(grandTotal);
             const discountNew = (convertGrandTotal + parseInt(price));
             document.getElementById('grand-total').innerText = discountNew
-
-            // seat name
             const selectedSeat = document.getElementById('selected-seat');
             console.log(selectedSeat)
             const li = document.createElement('li');
@@ -40,7 +36,6 @@ for (const seat of allSeat) {
             li.innerText = seatName;
             li.appendChild(p);
             selectedSeat.appendChild(li);
-            // price
             const selectedPrice = document.getElementById('selected-price');
             console.log(selectedPrice)
             const li2 = document.createElement('li');
@@ -48,7 +43,6 @@ for (const seat of allSeat) {
             li2.innerText = price;
             li2.appendChild(p2);
             selectedPrice.appendChild(li2);
-            // class    
             const selectedCLass = document.getElementById('selected-class');
             const li3 = document.createElement('li');
             const p3 = document.createElement('p');
@@ -56,7 +50,6 @@ for (const seat of allSeat) {
             li3.appendChild(p3);
             selectedCLass.appendChild(li3);
 
-            // seat left
             const availableSeat = document.getElementById('forty').innerText;
             const convertedAvailableSeat = parseInt(availableSeat);
             document.getElementById('forty').innerText = convertedAvailableSeat - 1;
@@ -109,12 +102,10 @@ function setInnerText(id, value) {
 }
 
 
-// hidden
-
 
 function hide() {
     hideElementById('section');
-    showElementById('hid');
+    showElementById('hide');
 }
 
 function hideElementById(elementId) {
