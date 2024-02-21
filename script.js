@@ -126,7 +126,10 @@ const submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', function (event) {
     if (!inputField.checkValidity() || inputField.value.trim() === '') {
         event.preventDefault(); 
-
+        let forHide=document.getElementById('hide');
+        let forShow=document.getElementById('section');
+        forShow.classList.remove('hidden');
+        forHide.classList.add('hidden');
         if (!inputField.checkValidity()) {
             inputField.focus();
             alert('Please fill in the required field.');
