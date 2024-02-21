@@ -1,4 +1,4 @@
-const allSeat = document.getElementsByClassName('seat');
+let allSeat = document.getElementsByClassName('seat');
 let count = 0;
 let totalClick = 0;
 let clickedOnce = false;
@@ -8,7 +8,11 @@ for (const seat of allSeat) {
         const seatName = e.target.parentNode.childNodes[1].innerText;
         const className = 'Economy';
         let price = 550;
-
+        let existingSeat=document.getElementById('selected-seat').innerText;
+        let seatInd = document.getElementById('seatName').innerText;
+        if(existingSeat.includes(seatInd)){
+            alert('Already Selected');
+        }
 
         if (totalClick >= 4) {
             this.disabled = true;
@@ -36,7 +40,6 @@ for (const seat of allSeat) {
             li.appendChild(p);
             selectedSeat.appendChild(li);
             const selectedPrice = document.getElementById('selected-price');
-            console.log(selectedPrice)
             const li2 = document.createElement('li');
             const p2 = document.createElement('p');
             li2.innerText = price;
@@ -56,13 +59,6 @@ for (const seat of allSeat) {
 
 
         }
-        const seatInd = document.getElementsByClassName('seat').innerText;
-        let existingSeat=document.getElementById('selected-seat').innerText;
-        if(existingSeat.includes(seatInd)){
-            alert("You have already selected this seat");
-            
-        }
-
     });
 }
 
