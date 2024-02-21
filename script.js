@@ -30,7 +30,6 @@ for (const seat of allSeat) {
             const discountNew = (convertGrandTotal + parseInt(price));
             document.getElementById('grand-total').innerText = discountNew
             const selectedSeat = document.getElementById('selected-seat');
-            console.log(selectedSeat)
             const li = document.createElement('li');
             const p = document.createElement('p');
             li.innerText = seatName;
@@ -57,8 +56,12 @@ for (const seat of allSeat) {
 
 
         }
-
-
+        const seatInd = document.getElementsByClassName('seat').innerText;
+        let existingSeat=document.getElementById('selected-seat').innerText;
+        if(existingSeat.includes(seatInd)){
+            alert("You have already selected this seat");
+            
+        }
 
     });
 }
