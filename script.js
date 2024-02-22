@@ -5,6 +5,7 @@ let clickedOnce = false;
 
 for (const seat of allSeat) {
     seat.addEventListener('click', function (e) {
+        seat.classList.add("pointer-events-none")
         const seatName = e.target.parentNode.childNodes[1].innerText;
         const className = 'Economy';
         let price = 550;
