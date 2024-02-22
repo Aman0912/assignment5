@@ -122,10 +122,10 @@ function showElementById(elementId2) {
 
 const inputField = document.getElementById('myInput');
 const submitButton = document.getElementById('submitButton');
-
+const inputPhone= document.getElementById('phone');
 
 submitButton.addEventListener('click', function (event) {
-    if (!inputField.checkValidity() || inputField.value.trim() === '') {
+    if (!inputField.checkValidity() && inputField.value.trim() === '') {
         event.preventDefault(); 
         let forHide=document.getElementById('hide');
         let forShow=document.getElementById('section');
@@ -138,6 +138,25 @@ submitButton.addEventListener('click', function (event) {
             alert('Please enter some text in the input field.');
         }
     }
+    
+});
+
+
+submitButton.addEventListener('keyup', function (event) {
+    if (!inputPhone.checkValidity() && inputPhone.value=== " ") {
+        event.preventDefault(); 
+        let forHide=document.getElementById('hide');
+        let forShow=document.getElementById('section');
+        forShow.classList.remove('hidden');
+        forHide.classList.add('hidden');
+        if (!inputPhone.checkValidity()) {
+            inputPhone.focus();
+            alert('Please fill in the required field.');
+        } else {
+            alert('Please enter some text in the input field.');
+        }
+    };
+    
 });
 
 
